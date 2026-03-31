@@ -24,10 +24,32 @@
     <a-assets>
         <img id="bricks" src="#bricks" crossorigin="anonymous">
       </a-assets>
-    <a-scene>
-      <a-sphere  id="PGB_sphere" position="0 2 -1.5" wireframe="false" rotation="0 0 0" 
-	        src="#bricks"
-	  ></a-sphere>
-    </a-scene>
+<a-scene>
+
+  <!-- Camera -->
+  <a-entity camera position="0 1.6 0"></a-entity>
+
+  <!-- Textured Sphere -->
+  <a-sphere  
+    id="PGB_sphere" 
+    position="0 1.5 -4" 
+    radius="1"
+    rotation="0 45 0" 
+    src="#bricks">
+  </a-sphere>
+
+  <!-- Floor -->
+  <a-plane 
+    position="0 0 -4" 
+    rotation="-90 0 0" 
+    width="12" 
+    height="12" 
+    color="#7BC8A4">
+  </a-plane>
+
+  <!-- Sky -->
+  <a-sky color="#DDEEFF"></a-sky>
+
+</a-scene>
   </body>
 </html>
