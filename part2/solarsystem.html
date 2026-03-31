@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./js/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <!-- Assets -->
+      <a-assets>
+        <img id="sunTex" src="./p02/IMAGES/brick_diffuse.jpg">
+        <img id="planet1Tex" src="./p02/IMAGES/brick_diffuse.jpg">
+        <img id="planet2Tex" src="./p02/IMAGES/brick_diffuse.jpg">
+        <img id="planet3Tex" src="./p02/IMAGES/brick_diffuse.jpg">
+        <img id="planet4Tex" src="./p02/IMAGES/brick_diffuse.jpg">
+      </a-assets>
+
+      <!-- Camera -->
+      <a-entity camera wasd-controls look-controls position="0 3 15"></a-entity>
+
+      <!-- Lights -->
+      <a-light type="ambient" color="#888"></a-light>
+      <a-light type="point" intensity="1.5" position="0 5 0" color="#FFF"></a-light>
+
+      <!-- Sky -->
+      <a-sky color="#000011"></a-sky>
+
+      <!-- Sun -->
+      <a-sphere 
+        id="sun"
+        position="0 3 -8"
+        radius="1.5"
+        src="#sunTex"
+        animation="property: material.color; to: orange; dir: alternate; loop: true; dur: 1500">
+      </a-sphere>
+
+      <!-- Planet 1 Orbit Group -->
+      <a-entity position="0 3 -8"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear">
+        <a-sphere position="3 0 0" radius="0.35" src="#planet1Tex"></a-sphere>
+      </a-entity>
+
+      <!-- Planet 2 Orbit Group -->
+      <a-entity position="0 3 -8"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 7000; easing: linear">
+        <a-sphere position="5 0 0" radius="0.5" src="#planet2Tex"></a-sphere>
+      </a-entity>
+
+      <!-- Planet 3 Orbit Group -->
+      <a-entity position="0 3 -8"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 10000; easing: linear">
+        <a-sphere position="7 0 0" radius="0.6" src="#planet3Tex"></a-sphere>
+      </a-entity>
+
+      <!-- Planet 4 Orbit Group -->
+      <a-entity position="0 3 -8"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 13000; easing: linear">
+        <a-sphere position="9 0 0" radius="0.45" src="#planet4Tex"></a-sphere>
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>

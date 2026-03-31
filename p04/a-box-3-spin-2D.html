@@ -1,16 +1,36 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script> 
+    <script src="../js/aframe.min.js"></script>
   </head>
   <body>
-    
-	<!-- <script src="../js/aframe.min.js"></script> -->
+
     <a-scene>
-	  <a-entity geometry="primitive: box" material="color: blue" position="0 1.5 -5"
-                animation__spin="property: rotation; to: 0 360 0; loop: true; dur: 4000"
-                animation__rotate="property: rotation; to: 360 360 0; loop: true; dur: 8000; easing: linear"></a-entity>
-      
-	  </a-entity>
+
+      <!-- Camera -->
+      <a-entity camera wasd-controls position="0 1.6 0"></a-entity>
+
+      <!-- Rotating Box -->
+      <a-entity 
+        geometry="primitive: box" 
+        material="color: blue" 
+        position="0 1.5 -5"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
+      </a-entity>
+
+      <!-- Floor -->
+      <a-plane 
+        position="0 0 -4" 
+        rotation="-90 0 0" 
+        width="10" 
+        height="10" 
+        color="#CCCCCC">
+      </a-plane>
+
+      <!-- Sky -->
+      <a-sky color="#EEF7FF"></a-sky>
+
     </a-scene>
+
   </body>
 </html>
